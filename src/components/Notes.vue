@@ -10,10 +10,11 @@
 				</button>
 			</div>
 			<div :class="view ? 'notes__list' : 'notes__grid'">
-				<Note v-for="(note, index) in notes" :key="index" 
+				<Note v-for="note in notes" :key="note.id" 
 				:title="note.title" 
 				:text="note.text" 
-				:date="note.date"/>
+				:date="note.date"
+				:view="view"/>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,133 @@
+@import '../variables.scss';
+
+.model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-btn {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    border-radius: 16px;
+    background: linear-gradient(0deg, rgba(103, 80, 164, 0.11) 0%, rgba(103, 80, 164, 0.11) 100%), #FFFBFE;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    transition: all 300ms ease;
+
+    &:focus {
+      transform: translateY(5px);
+      box-shadow: none;
+    }
+  }
+
+  &__content {
+    border-radius: 28px;
+    background: linear-gradient(0deg, rgba(103, 80, 164, 0.11) 0%, rgba(103, 80, 164, 0.11) 100%), #FFFBFE;
+    padding: 24px;
+  }
+
+  &-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &_input {
+      padding: 4px 16px;  
+      border-radius: 4px 4px 0px 0px;
+      background: #E7E0EC;
+      border-bottom: 1px solid #49454F;
+
+      &-title {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0.4px;
+        color: #6750A4;
+      }
+
+      &-input {
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+        width: 232px;
+        resize: none;
+        overflow-y: auto;
+
+
+        &::placeholder {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+
+    &-btn {
+      color: #6750A4;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0.1px;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      border-radius: 5px;
+      transition: all 200ms linear;
+
+      &.cancel {
+        color: $red;
+
+        &:hover {
+          background-color: $redBg;
+        }
+      }
+
+      &.add {
+        color: $blue;
+
+        &:hover {
+          background-color: $blueBg;
+        }
+      }
+    }
+  }
+}
+
+.model-enter-active,
+.model-leave-active {
+  transition: 0.2s linear;
+}
+
+.model-enter-from,
+.model-leave-to {
+  opacity: 0;
+  transform: scale(1.3);
+}

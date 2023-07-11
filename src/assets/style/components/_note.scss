@@ -1,0 +1,79 @@
+@import '../variables.scss';
+
+.note {
+  border-radius: 16px;
+  background: linear-gradient(0deg, rgba(103, 80, 164, 0.05) 0%, rgba(103, 80, 164, 0.05) 100%), #FFFBFE;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+  padding: 16px;
+  // width: 360px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+  }
+
+  &-data {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    margin-bottom: 16px;
+  }
+
+  &-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    margin-bottom: 17px;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &-edit,
+    &-delete {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 10px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0.1px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      transition: background 100ms linear;
+    }
+
+    &-edit {
+      color: $blue;
+
+      &:hover {
+        background-color: $blueBg;
+      }
+    }
+
+    &-delete {
+      color: $red;
+
+      &:hover {
+        background-color: $redBg;
+      }
+    }
+  }
+}

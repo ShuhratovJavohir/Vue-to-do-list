@@ -1,6 +1,6 @@
 <template>
 	<div class="note">
-		<div class="note__top">
+		<div :class="view ? 'note__list' : 'note__grid'">
 			<h2 class="note-title">{{ title }}</h2>
 			<p class="note-data">{{ date }}</p>
 		</div>
@@ -23,7 +23,8 @@ export default {
 	props: {
 		title: { typeof: String },
 		text: { typeof: String },
-		date: { typeof: String }
+		date: { typeof: String },
+		view: { typeof: Boolean}
 	},
 	data() {
 		return {

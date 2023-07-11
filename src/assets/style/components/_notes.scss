@@ -1,0 +1,56 @@
+@import '../variables.scss';
+
+.notes {
+  margin-top: 50px;
+
+  &__list {
+    margin-top: 30px;
+    display: grid;
+    gap: 24px;
+    row-gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__grid {
+    margin-top: 30px;
+    display: grid;
+    gap: 24px;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-title {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border-radius: 16px;
+      background: linear-gradient(0deg,
+          rgba(103, 80, 164, 0.11) 0%,
+          rgba(103, 80, 164, 0.11) 100%),
+        #fffbfe;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3),
+        0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+      width: 120px;
+      height: 56px;
+
+      & span {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+        color: $blue;
+      }
+    }
+  }
+}
