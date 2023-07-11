@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { v4 as uuidv4 } from 'uuid';
+
 export default {
   props: {
     isModelShow: {
@@ -44,9 +46,10 @@ export default {
     addNote() {
       if (this.title != '' && this.text != '') {
         const note = {
+          id: uuidv4(),
           title: this.title,
           text: this.text,
-          data: new Date().toLocaleDateString()
+          date: new Date().toLocaleDateString()
         }
         this.$emit('addNote', note)
         this.closeModel()
