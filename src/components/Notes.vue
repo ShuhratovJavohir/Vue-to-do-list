@@ -10,11 +10,12 @@
 				</button>
 			</div>
 			<div :class="view ? 'notes__list' : 'notes__grid'">
-				<Note v-for="note in notes" :key="note.id" 
-				:title="note.title" 
-				:text="note.text" 
-				:date="note.date"
-				:view="view"/>
+				<Note v-for="note in notes" 
+				:key="note.id" 
+				:note="note"
+				:view="view"
+				@delNotes="$emit('delNotes', note.id)"
+				/>
 			</div>
 		</div>
 	</div>

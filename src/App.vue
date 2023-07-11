@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <Navbar />
-    <Notes :notes="notes" />
+    <Notes :notes="notes" @delNotes="delNotes"/>
     <Model
       @close="isModelShow = false"
       @addNote="add"
@@ -39,10 +39,13 @@ export default {
     },
     getNotes(){
       let localNote = localStorage.notes
-      console.log(localNote);
       if(localNote){
         this.notes = JSON.parse(localNote)
       }
+    },
+    delNotes(id){
+      let index = this.notes.findIndex((note) => note.id == id)
+      this.notes.splice(index, 1)
     },
   },
   watch: {
