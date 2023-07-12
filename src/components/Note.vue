@@ -6,7 +6,7 @@
 		</div>
 		<p class="note-text">{{ note.text }}</p>
 		<div class="note__btns">
-			<button class="note__btns-edit">
+			<button class="note__btns-edit" @click="$emit('change', note.id)">
 				<img src="@/assets/images/edit.svg" alt="">
 				<span>РЕДАКТИРОВАТЬ</span>
 			</button>
@@ -22,7 +22,7 @@
 export default {
 	props: {
 		note: { typeof: Object},
-		view: { typeof: Boolean}
+		view: { typeof: Boolean},
 	},
 	data() {
 		return {
